@@ -3,20 +3,40 @@
 
 //const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
-  function retnome() {
-    return nome;
-  }
+const nome = "Daniel Santos";
+const canal = "Globo";
 
-  const nome = "Daniel Santos";
-  const canal = "Globo";
-
+function Topo() {
   return (
-    <main>
-      <div>{retnome()}</div>
-      <div>{canal}</div>
-      <div>Typescript</div>
-      <div>React</div>
-    </main>
+    <div className="flex justify-between items-center bg-zinc-300 h-[100px]">
+      <div>Logo</div>
+      <div className="flex flex-col justify-center items-center">
+        <div className="text-3xl">{canal}</div>
+        <div className="subtituloTopo">Curso de React</div>
+      </div>
+      <div>{nome}</div>
+    </div>
   );
 }
+
+export default function Home() {
+  return (
+    <div>
+      <Topo />
+      <div style={testecss}>
+        <div>{canal}</div>
+        <div>Typescript</div>
+        <div style={{ color: "red", backgroundColor: "#bbb" }}>React</div>
+      </div>
+    </div>
+  );
+}
+
+const testecss = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  color: "blue",
+  backgroundColor: "#eee",
+  fontSize: "20px",
+};
