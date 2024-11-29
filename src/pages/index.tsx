@@ -3,20 +3,18 @@
 
 //const inter = Inter({ subsets: ["latin"] });
 
+import Topo from "@/components/Topo";
+import Card from "@/components/Card";
+
 const nome = "Daniel Santos";
 const canal = "Globo";
 
-function Topo() {
-  return (
-    <div className="flex justify-between items-center bg-zinc-300 h-[100px]">
-      <div>Logo</div>
-      <div className="flex flex-col justify-center items-center">
-        <div className="text-3xl">{canal}</div>
-        <div className="subtituloTopo">Curso de React</div>
-      </div>
-      <div>{nome}</div>
-    </div>
-  );
+function calcDesc(v: number, d: number) {
+  return v - d;
+}
+
+function calcDesc2(v: number, d: number) {
+  return v - d / 2;
 }
 
 export default function Home() {
@@ -27,6 +25,22 @@ export default function Home() {
         <div>{canal}</div>
         <div>Typescript</div>
         <div style={{ color: "red", backgroundColor: "#bbb" }}>React</div>
+      </div>
+      <div className="flex justify-center gap-3">
+        <Card produto={"Mouse"} valor={49.9} desconto={2} funcao={calcDesc} />
+        <Card produto={"Teclado"} valor={99.9} desconto={0} funcao={calcDesc} />
+        <Card
+          produto={"Monitor"}
+          valor={299.9}
+          desconto={5}
+          funcao={calcDesc2}
+        />
+        <Card
+          produto={"Impressora"}
+          valor={399.9}
+          desconto={50}
+          funcao={calcDesc2}
+        />
       </div>
     </div>
   );
