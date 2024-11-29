@@ -5,17 +5,9 @@
 
 import Topo from "@/components/Topo";
 import Card from "@/components/Card";
+import Link from "next/link";
 
-const nome = "Daniel Santos";
 const canal = "Globo";
-
-function calcDesc(v: number, d: number) {
-  return v - d;
-}
-
-function calcDesc2(v: number, d: number) {
-  return v - d / 2;
-}
 
 export default function Home() {
   return (
@@ -25,22 +17,6 @@ export default function Home() {
         <div>{canal}</div>
         <div>Typescript</div>
         <div style={{ color: "red", backgroundColor: "#bbb" }}>React</div>
-      </div>
-      <div className="flex justify-center gap-3">
-        <Card produto={"Mouse"} valor={49.9} desconto={2} funcao={calcDesc} />
-        <Card produto={"Teclado"} valor={99.9} desconto={0} funcao={calcDesc} />
-        <Card
-          produto={"Monitor"}
-          valor={299.9}
-          desconto={5}
-          funcao={calcDesc2}
-        />
-        <Card
-          produto={"Impressora"}
-          valor={399.9}
-          desconto={50}
-          funcao={calcDesc2}
-        />
       </div>
     </div>
   );
