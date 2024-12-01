@@ -10,8 +10,18 @@ export default function Topo() {
       </div>
       <div>
         <nav>
-          <Link href="/">Home</Link>
-          <Link href="/produtos/produtos">Produtos</Link>
+          <Link href={"/"}>Home</Link>
+          <Link
+            href={{
+              pathname: "/produtos/produtos",
+              query: {
+                nome: "Leonardo",
+                curso: "React Next",
+              },
+            }}
+          >
+            Produtos
+          </Link>
           <Link href="/teste/teste">Teste</Link>
         </nav>
       </div>
