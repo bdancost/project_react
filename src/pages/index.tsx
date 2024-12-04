@@ -4,8 +4,6 @@
 //const inter = Inter({ subsets: ["latin"] });
 
 import Topo from "@/components/Topo";
-import Card from "@/components/Card";
-import Link from "next/link";
 
 const canal = "Globo";
 
