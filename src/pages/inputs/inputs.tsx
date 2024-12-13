@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Topo from "@/components/Topo";
+import Globais from "@/components/Globais";
 
 const cursos: { id: number; nome: string }[] = [
   { id: 1, nome: "HTML" },
@@ -13,6 +14,10 @@ const cursos: { id: number; nome: string }[] = [
 export default function Inputs() {
   const [nome, setNome] = useState<string>("");
   const [curso, setCurso] = useState<string>("");
+
+  useEffect(() => {
+    Globais.curso = "React";
+  });
 
   return (
     <div>
@@ -36,6 +41,11 @@ export default function Inputs() {
       </div>
       <div>Nome digitado: {nome}</div>
       <div>Curso escolhido: {curso}</div>
+      <div>
+        <p>{Globais.canal}</p>
+        <p>{Globais.curso}</p>
+        <p>{Globais.ano}</p>
+      </div>
     </div>
   );
 }
